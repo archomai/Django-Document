@@ -25,7 +25,6 @@ class TwitterUser(models.Model):
         related_name='+',
     )
 
-
     def __str__(self):
         return self.name
 
@@ -57,9 +56,31 @@ class TwitterUser(models.Model):
         following_users = TwitterUser.objects.filter(pk__in=following_pk_list)
         return following_users
 
+    @property
+    def followers(self):
+        pk_list = self.relations_by_to_user.filter(
+            type=Relation.RELATION_TYPE_FOLLOWING).values_list('to_user', flat=True)
+        return TwitterUser.objects.filter(pk__in=pk_list)
+
+    def is_followee(self, to_user):
+        """
+        내가 to_user를 follow하고 있는지 여부를 True/False 로 표현
+        :param to_user:
+        :return:
+        """
+        return self.following.filter(pk=to_user.pk).exists()
+
+    def is_follower(self, from_user):
+        """
+        from_user가 나를 follow하고 있는지 여부를 True/False 로 표현
+        :param to_user:
+        :return:
+        """
+        return self.followers.filter(pk=from_user.pk).exists()
+
     def follow(self, to_user):
         """
-        to_user에 주어진 TwitterUser를 followgka
+        form에 주어진 TwitterUser를 followgka
         :param to_user:
         :return:
         """
@@ -111,5 +132,5 @@ class Relation(models.Model):
             # DB에 중복 데이터 저장을 막음
             # ex) from_user가 1, to_user가 3인 데이터가 이미 있다면
             #   두 항목의 값이 모두 같은 또 다른 데이터가 존재할 수 없음
-           ('from_user', 'to_user'),
+            ('from_user', 'to_user'),
         )
