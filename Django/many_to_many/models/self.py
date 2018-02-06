@@ -4,9 +4,13 @@ __all__ = (
     'FacebookUser',
 )
 
+
 class FacebookUser(models.Model):
     name = models.CharField(max_length=50)
     friends = models.ManyToManyField('self')
+
+    class Meta:
+        verbose_name_plural = 'Self - FacebookUser'
 
     def __str__(self):
         # name 이 '이한영'이며
@@ -14,14 +18,12 @@ class FacebookUser(models.Model):
         # -> 이한영 (친구 : 박보영, 아이유)
         # __str__의 결과가 위처름 출력될 수 있도록 작성
 
-
         # for loop를 사용
-        friends_string =''
+        friends_string = ''
         for friend in self.friends.all():
             friends_string += friend.name
             friends_string += ', '
         friends_string = friends_string[:-2]
-
 
         # list comprehension 사용
         # friends_string = ', '.join([f.name for f in self.friends.all()])

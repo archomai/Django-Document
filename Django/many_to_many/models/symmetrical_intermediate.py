@@ -25,6 +25,9 @@ class TwitterUser(models.Model):
         related_name='+',
     )
 
+    class Meta:
+        verbose_name_plural = 'Symmetircal_Intermediate - TwitterUser'
+
     def __str__(self):
         return self.name
 
@@ -127,6 +130,7 @@ class Relation(models.Model):
 
     # class 전체에 적용
     class Meta:
+        verbose_name_plural = 'Symmetircal_Intermediate - TwitterUser'
         unique_together = (
             # from_user와 to_user의 값이 이미 있을 경우
             # DB에 중복 데이터 저장을 막음
