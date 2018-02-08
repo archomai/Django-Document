@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'relations.many_to_many.apps.ManyToManyConfig',
     'relations.one_to_one.apps.OneToOneConfig',
 
-    'ingeritance.rel.apps.RelConfig'
+    'inheritance.rel.apps.RelConfig',
     'inheritance.abstract_base_classes',
 ]
 
