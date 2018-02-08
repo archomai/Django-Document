@@ -39,10 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'myapp',
-    'foreignkey',
-    'many_to_many',
-    'one_to_one',
 
+    'relations.foreignkey.apps.ForeignkeyConfig',
+    'relations.many_to_many.apps.ManyToManyConfig',
+    'relations.one_to_one.apps.OneToOneConfig',
+
+    'ingeritance.rel.apps.RelConfig'
     'inheritance.abstract_base_classes',
 ]
 

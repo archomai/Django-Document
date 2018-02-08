@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from one_to_one.models import (
+from .models import (
     Place, Restaurant, Waiter
 )
 
