@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'inheritance.rel.apps.RelConfig',
     'inheritance.abstract_base_classes',
     'inheritance.proxy.apps.ProxyConfig',
+    'inheritance.custom_manager.apps.CustomManagerConfig',
+
 ]
 
 MIDDLEWARE = [
