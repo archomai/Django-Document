@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'inheritance.multi_table.apps.MultiTableConfig',
     'inheritance.rel.apps.RelConfig',
     'inheritance.abstract_base_classes',
+    'inheritance.proxy.apps.ProxyConfig',
 ]
 
 MIDDLEWARE = [
