@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'relations.many_to_many.apps.ManyToManyConfig',
     'relations.one_to_one.apps.OneToOneConfig',
 
+    'inheritance.multi_table.apps.MultiTableConfig',
     'inheritance.rel.apps.RelConfig',
     'inheritance.abstract_base_classes',
 ]
