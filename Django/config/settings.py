@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django_extensions',
+
     'myapp',
 
     'relations.foreignkey.apps.ForeignkeyConfig',
