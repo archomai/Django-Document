@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     'inheritance.abstract_base_classes',
     'inheritance.proxy.apps.ProxyConfig',
     'inheritance.custom_manager.apps.CustomManagerConfig',
+    'inheritance.proxy_manager.apps.ProxyManagerConfig',
+
 
 ]
 
